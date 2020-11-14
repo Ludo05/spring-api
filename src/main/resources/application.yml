@@ -7,3 +7,8 @@ allow:
 #  jackson:
 #    mapper:
 #    property-naming-strategy: com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy
+application:
+  jwt:
+    secret: "securesecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecuresecure"
+    prefix: "Bearer "
+    expirationDays: 14

@@ -1,0 +1,5 @@
+service:
+  name: "mysitalphatwo"
+  container:
+    name: "my-site-alboto"
+  port: 31007
