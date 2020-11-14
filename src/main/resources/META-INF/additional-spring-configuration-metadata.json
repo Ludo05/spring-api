@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "allow.annoymous",
+      "type": "java.lang.String",
+      "description": "Description for allow.annoymous."
+  }
+] }

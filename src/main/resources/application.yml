@@ -1,0 +1,9 @@
+server:
+  port: 9090
+allow:
+  annoymous:
+    - "/"
+#spring:
+#  jackson:
+#    mapper:
+#    property-naming-strategy: com.fasterxml.jackson.databind.PropertyNamingStrategy.SnakeCaseStrategy
