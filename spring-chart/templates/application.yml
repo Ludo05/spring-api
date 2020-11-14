@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ .Values.service.name }}
+  labels:
+    app: {{ .Values.service.name }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.service.name }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.service.name }}
+    spec:
+      containers:
+        - name: {{ .Values.service.container.name }}
+          image: lewis150193/my-website:v4
+          ports:
+            - containerPort: 9090
+---
+# Used to make external services need to be marked with LoadBalancer
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.service.container.name }}
+spec:
+  selector:
+    # app will match any deployment with same label
+    app: {{ .Values.service.name }}
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 9090
+      targetPort: 9090
+      nodePort: {{ .Values.service.port }}
+
