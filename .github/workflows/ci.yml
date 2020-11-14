@@ -26,3 +26,15 @@ jobs:
       run: chmod +x gradlew
     - name: Build with Gradle
       run: ./gradlew build
+    - name: Build and push to Docker
+      uses: opspresso/action-docker@master
+      with:
+        args: --docker
+      env:
+        USERNAME: ${{ secrets.DOCKER_USERNAME }}
+        PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKERFILE: "Dockerfile"
+        IMAGE_NAME: "lewis150193/my-website"
+        TAG_NAME: "v5"
+        LATEST: "true"
+
