@@ -1,5 +1,6 @@
 service:
-  name: "mysitalphatwo"
+  name: "mysitalphatwoss"
   container:
-    name: "my-site-alboto"
-  port: 31007
+    name: "my-site-albotoss"
+  port: 31107
+  image: lewis150193/my-website:v4
