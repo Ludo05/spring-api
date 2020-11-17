@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: {{ .Values.service.container.name }}
-          image: lewis150193/my-website:v4
+          image: {{ .Values.service.image }}
           ports:
             - containerPort: 9090
 ---
